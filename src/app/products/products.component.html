@@ -1,0 +1,29 @@
+<div class="container-fluid mt-2">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="row">
+          <div class="card col-md-4 col-sm-6" *ngFor="let cake of cakes" style="cursor: pointer;" (click)="onCakeClick(cake)">
+            <img src={{cake.img}} class="card-img-top" alt="..."  style="height: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{cake.title}}</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="row">
+        <app-cake-description [cakeData]="cakeData" (cDataToP)="cDataToPReceived($event)"></app-cake-description>
+      </div>
+      <hr>
+      <div class="row" *ngIf="cakeDataFromChild">
+          <h4>{{cakeDataFromChild.title}} &nbsp; is added to cart successfully</h4>
+          <!-- <button class="btn btn-danger" (click)="onCheckOut()">Check Out</button> -->
+          <button class="btn btn-danger" routerLink="/checkout">Check Out</button>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+

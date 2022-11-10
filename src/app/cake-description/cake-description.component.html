@@ -1,0 +1,12 @@
+<div *ngIf="cakeData">
+  <h3>Cake Description</h3>
+  <div class="card">
+    <img src={{cakeData.img}} class="card-img-top" alt="..."  style="height: 10rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{cakeData.title}}</h5>
+      <p class="card-text">Some quick example text to build on the.</p>
+      <button class="btn btn-success" (click)="addToCart(cakeData)">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
